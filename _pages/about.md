@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a third-year undergraduate in the College of Computer Science and Technology, Zhejiang University. My research interest is computer vision and machine learning.
+I am a third-year undergraduate in the [College of Computer Science and Technology](http://www.cs.zju.edu.cn/), [Zhejiang University](https://www.zju.edu.cn/). My research interest is computer vision and machine learning.
 
 News
 ======
