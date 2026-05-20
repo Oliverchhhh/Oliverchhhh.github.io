@@ -198,7 +198,9 @@ function renderPubs(list) {
     const tags = (p.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
 
     const thumbContent = p.thumbnail
-      ? `<img src="${p.thumbnail}" alt="${p.title}" loading="lazy">`
+      ? p.thumbnail.toLowerCase().endsWith('.pdf')
+        ? `<div class="pdf-preview-placeholder" data-pdf="${p.thumbnail}"></div>`
+        : `<img src="${p.thumbnail}" alt="${p.title}" loading="lazy">`
       : `<span class="pdf-pending" data-pdf="${p.links?.paper || p.links?.arxiv || ''}">📄</span>`;
 
     return `

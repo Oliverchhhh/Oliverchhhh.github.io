@@ -17,8 +17,8 @@ const PUBLICATIONS = [
     authors: ["Mingyu Liu","Jiuhe Shu","Hui Chen","Zeju Li","Canyu Zhao","Jiange Yang","Shenyuan Gao","Hao Chen","Chunhua Shen"],
     me:      "Hui Chen",
     equal:   ["Mingyu Liu","Jiuhe Shu",],
-    venue:   "CVPR",
-    year:    2026,Highlight,
+    venue:   "CVPR Highlight",
+    year:    2026,
     thumbnail: "assets/img/StaMo_teaser_cvpr.pdf",   // leave empty → auto PDF preview
     links: {
       paper:   "files/papers/2510.05057v2.pdf",
