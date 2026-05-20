@@ -16,7 +16,8 @@ const PUBLICATIONS = [
     title:   "StaMo: Unsupervised Learning of Generalizable Robot Motion from Compact State Representation",
     authors: ["Mingyu Liu","Jiuhe Shu","Hui Chen","Zeju Li","Canyu Zhao","Jiange Yang","Shenyuan Gao","Hao Chen","Chunhua Shen"],
     me:      "Hui Chen",
-    venue:   "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+    equal:   ["Mingyu Liu","Jiuhe Shu",],
+    venue:   "CVPR 2026,Highlight",
     year:    2026,
     thumbnail: "",   // leave empty → auto PDF preview
     links: {
