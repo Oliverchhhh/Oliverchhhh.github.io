@@ -4,19 +4,11 @@
 
 const NEWS = [
   {
-    date: "2025-05",
-    text: "Paper accepted at <strong>CVPR 2025</strong>!",
-  },
-  {
-    date: "2025-03",
-    text: "Started research internship at [Company/Lab].",
-  },
-  {
-    date: "2025-01",
-    text: "New preprint on arXiv: <a href='#'>Your Paper Title</a>.",
+    date: "2026-05",
+    text: "One paper accepted at <strong>CVPR 2026</strong>!",
   },
   {
     date: "2024-09",
-    text: "Joined [Lab Name] as a Ph.D. student.",
+    text: "Joined CAD Artificial Intelligence Lab as an intern, advised by Prof. [Chunhua Shen](https://scholar.google.com/citations?user=Ljk2BvIAAAAJ&hl=en&oi=ao) and Prof. [Hao Chen](https://scholar.google.com/citations?user=FaOqRpcAAAAJ&hl=en).",
   },
 ];
