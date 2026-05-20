@@ -220,25 +220,20 @@ function renderPubs(list) {
   schedulePDFPreviews();
 }
 
-// Lazy PDF.js first-page render via IntersectionObserver
+// Render PDF thumbnails after layout is complete
 function schedulePDFPreviews() {
   if (typeof pdfjsLib === 'undefined') return;
 
   pdfjsLib.GlobalWorkerOptions.workerSrc =
     'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-  const obs = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const span = entry.target.querySelector('.pdf-pending');
-      if (!span) return;
-      const url = span.getAttribute('data-pdf');
-      observer.unobserve(entry.target);
-      renderPDFThumb(url, entry.target);
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.pub-thumb .pdf-pending').forEach(span => {
+      const url       = span.getAttribute('data-pdf');
+      const container = span.closest('.pub-thumb');
+      if (url && container) renderPDFThumb(url, container);
     });
-  }, { rootMargin: '200px', threshold: 0 });
-
-  document.querySelectorAll('.pub-thumb').forEach(el => obs.observe(el));
+  });
 }
 
 async function renderPDFThumb(url, container) {
