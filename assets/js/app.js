@@ -284,8 +284,9 @@ function buildBlog() {
 
     const meta = [post.date, ...(post.tags || [])].join(' · ');
 
+    const isInternal = post.url && !post.url.startsWith('http');
     return `
-      <a class="blog-card" href="${post.url}" target="_blank" rel="noopener">
+      <a class="blog-card" href="${post.url}"${isInternal ? '' : ' target="_blank" rel="noopener"'}>
         ${thumb}
         <div class="blog-body">
           <h3 class="blog-title">${post.title}</h3>
@@ -294,6 +295,53 @@ function buildBlog() {
         </div>
       </a>`;
   }).join('');
+}
+
+// ── Blog post (Markdown renderer) ──────────────────────────────────────────
+function buildBlogPost() {
+  buildNav('blog.html');
+  buildFooter();
+
+  const params   = new URLSearchParams(location.search);
+  const filename = params.get('post');
+  const el       = document.getElementById('postContent');
+  if (!el) return;
+
+  if (!filename) {
+    el.innerHTML = '<p>No post specified.</p>';
+    return;
+  }
+
+  el.innerHTML = '<p class="loading">Loading…</p>';
+
+  fetch(`files/blogs/${filename}`)
+    .then(r => {
+      if (!r.ok) throw new Error(r.status);
+      return r.text();
+    })
+    .then(raw => {
+      const { meta, content } = parseFrontmatter(raw);
+      document.title = `${meta.title || filename} — ${CONFIG.name}`;
+      el.innerHTML = `
+        ${meta.title ? `<h1 class="post-title">${meta.title}</h1>` : ''}
+        ${meta.date  ? `<p class="post-meta">${meta.date}${meta.tags ? ' · ' + meta.tags : ''}</p>` : ''}
+        <div class="post-body">${md(content)}</div>`;
+    })
+    .catch(() => {
+      el.innerHTML = '<p>Post not found.</p>';
+    });
+}
+
+function parseFrontmatter(text) {
+  if (!text.startsWith('---')) return { meta: {}, content: text };
+  const end = text.indexOf('\n---', 3);
+  if (end === -1) return { meta: {}, content: text };
+  const meta = {};
+  text.slice(3, end).trim().split('\n').forEach(line => {
+    const i = line.indexOf(':');
+    if (i > 0) meta[line.slice(0, i).trim()] = line.slice(i + 1).trim();
+  });
+  return { meta, content: text.slice(end + 4).trim() };
 }
 
 // ── Resume ─────────────────────────────────────────────────────────────────

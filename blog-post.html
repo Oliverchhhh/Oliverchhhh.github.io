@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="nav" id="mainNav"></header>
+
+<main class="container page-content">
+  <a href="blog.html" class="back-link">← Back to Blog</a>
+  <article id="postContent" class="blog-post prose"></article>
+</main>
+
+<footer class="site-footer container" id="siteFooter"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="data/config.js"></script>
+<script src="assets/js/app.js"></script>
+<script>document.addEventListener('DOMContentLoaded', buildBlogPost);</script>
+</body>
+</html>
