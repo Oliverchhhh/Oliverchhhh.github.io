@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="nav" id="mainNav"></header>
+
+<main class="container page-content">
+  <div class="page-header">
+    <h1>Publications</h1>
+    <p>
+      <span class="me">Underlined name</span> indicates primary / corresponding author.
+      * denotes equal contribution.
+    </p>
+  </div>
+
+  <div id="pubFilters" class="pub-filters"></div>
+  <div id="pubList"    class="pub-list"></div>
+</main>
+
+<!-- PDF.js for auto-rendering paper thumbnails from PDF first page -->
+<footer class="site-footer container" id="siteFooter"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="data/config.js"></script>
+<script src="data/publications.js"></script>
+<script src="assets/js/app.js"></script>
+<script>buildPublications()</script>
+</body>
+</html>

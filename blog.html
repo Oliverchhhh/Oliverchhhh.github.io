@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="nav" id="mainNav"></header>
+
+<main class="container page-content">
+  <div class="page-header">
+    <h1>Blog</h1>
+    <p>Writing about research, methods, and ideas.</p>
+  </div>
+
+  <div id="blogGrid" class="blog-grid"></div>
+</main>
+
+<footer class="site-footer container" id="siteFooter"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="data/config.js"></script>
+<script src="data/blog.js"></script>
+<script src="assets/js/app.js"></script>
+<script>buildBlog()</script>
+</body>
+</html>

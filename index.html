@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal academic homepage">
+  <title>Home</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="nav" id="mainNav"></header>
+
+<main class="container page-content">
+  <div class="home-grid">
+
+    <!-- Left: sticky profile card -->
+    <aside id="profile" class="profile-card"></aside>
+
+    <!-- Right: about + news + visitor map -->
+    <div class="home-right">
+
+      <h2 class="section-title">About Me</h2>
+      <div id="aboutMe" class="about-me"></div>
+
+      <h2 class="section-title">News</h2>
+      <ul id="newsList" class="news-list"></ul>
+
+      <!-- Visitor map — no heading, just map + one counter line -->
+      <div class="map-container" id="visitorMap"></div>
+      <p class="visitor-counter">
+        <span id="busuanzi_value_site_uv">–</span> unique visitors ·
+        <span id="busuanzi_value_site_pv">–</span> total views ·
+        <span id="lastUpdated"></span>
+      </p>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer container" id="siteFooter"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="data/config.js"></script>
+<script src="data/news.js"></script>
+<script src="assets/js/app.js"></script>
+<!-- Busuanzi visitor counter (free, static-site compatible) -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script>buildHome()</script>
+</body>
+</html>
