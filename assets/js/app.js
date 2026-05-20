@@ -93,7 +93,8 @@ function renderProfile() {
         email: 'Email', github: 'GitHub', scholar: 'Scholar',
         twitter: 'Twitter', linkedin: 'LinkedIn', orcid: 'ORCID', homepage: 'Website',
       };
-      return `<a class="social-link" href="${v}" target="_blank" rel="noopener">
+      const href = k === 'email' ? `mailto:${v}` : v;
+      return `<a class="social-link" href="${href}"${k !== 'email' ? ' target="_blank" rel="noopener"' : ''}>
         ${ICONS[k] || ''}${labels[k] || k}</a>`;
     }).join('');
 
