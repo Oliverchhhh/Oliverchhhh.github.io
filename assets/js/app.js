@@ -278,9 +278,12 @@ function buildBlog() {
   if (!el) return;
 
   el.innerHTML = BLOG.map((post, i) => {
+    const isIntPost = post.url && post.url.includes('blog-post.html');
     const thumb = post.image
       ? `<img class="blog-thumb-img" src="${post.image}" alt="${post.title}" loading="lazy">`
-      : `<div class="blog-thumb-placeholder" id="bthumb-${i}" style="background:${titleGradient(post.title)}">${post.title[0].toUpperCase()}</div>`;
+      : isIntPost
+        ? `<div class="blog-thumb-frame"><iframe src="${post.url}&embed=1" loading="lazy" scrolling="no" tabindex="-1"></iframe></div>`
+        : `<div class="blog-thumb-placeholder" style="background:${titleGradient(post.title)}">${post.title[0].toUpperCase()}</div>`;
 
     const meta = [post.date, ...(post.tags || [])].join(' · ');
     const isInternal = post.url && !post.url.startsWith('http');
@@ -296,31 +299,16 @@ function buildBlog() {
       </a>`;
   }).join('');
 
-  // For internal posts without a manual image, auto-extract first image from markdown
-  BLOG.forEach((post, i) => {
-    if (post.image) return;
-    const match = post.url && post.url.match(/[?&]post=([^&]+)/);
-    if (!match) return;
-    fetch(`files/blogs/${match[1]}`)
-      .then(r => r.ok ? r.text() : null)
-      .then(text => {
-        if (!text) return;
-        const imgMatch = text.match(/!\[.*?\]\(([^)]+)\)/);
-        if (!imgMatch) return;
-        const el = document.getElementById(`bthumb-${i}`);
-        if (el) el.outerHTML = `<img class="blog-thumb-img" src="${imgMatch[1]}" alt="" loading="lazy">`;
-      })
-      .catch(() => {});
-  });
 }
 
 // ── Blog post (Markdown renderer) ──────────────────────────────────────────
 function buildBlogPost() {
-  buildNav('blog.html');
-  buildFooter();
-
   const params   = new URLSearchParams(location.search);
+  const isEmbed  = params.get('embed') === '1';
   const filename = params.get('post');
+
+  if (!isEmbed) { buildNav('blog.html'); buildFooter(); }
+  if (isEmbed)  { document.body.classList.add('embed-mode'); }
   const el       = document.getElementById('postContent');
   if (!el) return;
 

@@ -317,6 +317,27 @@ img { display: block; max-width: 100%; }
   color: rgba(255,255,255,.85); letter-spacing: .05em; user-select: none;
 }
 
+/* ── Blog card iframe preview ───────────────────────────────────────────── */
+.blog-thumb-frame {
+  width: 100%; height: 175px;
+  overflow: hidden; position: relative; background: var(--bg-alt);
+}
+.blog-thumb-frame iframe {
+  position: absolute; top: 0; left: 0;
+  width: 334%;          /* 100% / scale(0.3) — fills parent at 1/3 scale */
+  height: 584px;        /* 175px / 0.3 — shows top portion */
+  transform: scale(0.3);
+  transform-origin: top left;
+  pointer-events: none;
+  border: none;
+}
+
+/* embed mode: no chrome, clean for iframe preview */
+body.embed-mode .nav,
+body.embed-mode .site-footer,
+body.embed-mode .back-link { display: none; }
+body.embed-mode .page-content { padding-top: 20px; }
+
 /* ── Blog post reading page ─────────────────────────────────────────────── */
 .back-link {
   display: inline-block; margin-bottom: 28px;
