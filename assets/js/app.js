@@ -187,7 +187,7 @@ function renderPubs(list) {
       const name = a === p.me ? `<span class="me">${a}</span>` : a;
       return name + sup;
     }).join(', ');
-    const equalNote = eq.length ? `<p class="pub-equal">† Equal contribution</p>` : '';
+    const equalNote = '';
 
     const links = Object.entries(p.links || {})
       .filter(([, v]) => v)
