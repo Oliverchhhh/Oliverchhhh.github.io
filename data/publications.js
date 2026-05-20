@@ -21,7 +21,7 @@ const PUBLICATIONS = [
     year:    2026,
     thumbnail: "",   // leave empty → auto PDF preview
     links: {
-      paper:   "files/papers/2510.05057v2.pdf",
+      paper:   "files/paper/2510.05057v2.pdf",
       arxiv:   "https://arxiv.org/abs/2510.05057",
       code:    "https://aim-uofa.github.io/StaMo/",
       demo:    "",
