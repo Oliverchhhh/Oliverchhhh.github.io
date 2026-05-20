@@ -27,10 +27,16 @@ jobs:
 
       - name: Inject last commit date
         run: |
-          DATE=$(git log -1 --format=%Y-%m-%d 2>/dev/null || date +%Y-%m-%d)
-          echo "Injecting date: $DATE"
-          sed -i "s/lastUpdated: \"[^\"]*\"/lastUpdated: \"${DATE}\"/" data/config.js || true
-          grep lastUpdated data/config.js
+          DATE=$(git log -1 --format=%cs 2>/dev/null || date +%Y-%m-%d)
+          python3 << PYEOF
+import re
+date = "$DATE"
+with open('data/config.js') as f:
+    s = f.read()
+s = re.sub(r'lastUpdated: "[^"]+"', 'lastUpdated: "' + date + '"', s)
+open('data/config.js', 'w').write(s)
+print("Injected date:", date)
+PYEOF
 
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
