@@ -9,27 +9,27 @@
 
 const BLOG = [
   {
-    title:   "How I Approached My First Independent Research Project",
-    date:    "2025-04-10",
-    url:     "https://your-blog.com/post-1",
+    title:   "How to Use My Website Template",
+    date:    "2026-05-20",
+    url:     "blog-post.html?post=website-template-guide.md",
     image:   "",
     tags:    ["Research", "Tips"],
-    summary: "A reflection on the challenges and lessons learned during my first independent research project — from idea generation to paper submission.",
+    summary: "It introduces how to use my template to create your own personal website.",
   },
-  {
-    title:   "Understanding Diffusion Models from Scratch",
-    date:    "2024-11-20",
-    url:     "https://your-blog.com/post-2",
-    image:   "assets/img/blog/diffusion.png",
-    tags:    ["Tutorial", "Deep Learning"],
-    summary: "A step-by-step walkthrough of the mathematics behind denoising diffusion probabilistic models, with code examples in PyTorch.",
-  },
-  {
-    title:   "Reading List: Papers That Changed How I Think",
-    date:    "2024-07-05",
-    url:     "https://your-blog.com/post-3",
-    image:   "",
-    tags:    ["Reading List"],
-    summary: "Ten papers every ML researcher should read at least once, and why they matter.",
-  },
+  // {
+  //   title:   "Understanding Diffusion Models from Scratch",
+  //   date:    "2024-11-20",
+  //   url:     "https://your-blog.com/post-2",
+  //   image:   "assets/img/blog/diffusion.png",
+  //   tags:    ["Tutorial", "Deep Learning"],
+  //   summary: "A step-by-step walkthrough of the mathematics behind denoising diffusion probabilistic models, with code examples in PyTorch.",
+  // },
+  // {
+  //   title:   "Reading List: Papers That Changed How I Think",
+  //   date:    "2024-07-05",
+  //   url:     "https://your-blog.com/post-3",
+  //   image:   "",
+  //   tags:    ["Reading List"],
+  //   summary: "Ten papers every ML researcher should read at least once, and why they matter.",
+  // },
 ];
