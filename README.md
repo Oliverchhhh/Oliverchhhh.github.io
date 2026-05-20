@@ -39,7 +39,7 @@ Quick start:
 
 If you find this project useful, please consider giving it a ⭐ — it helps others discover the template.
 
-For commercial use or any other inquiries, please contact me at **2273369951@qq.com**.
+For commercial use or any other inquiries, please contact me at **2273369951 [at] qq [dot] com**.
 
 ---
 
