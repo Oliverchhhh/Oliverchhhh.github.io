@@ -132,7 +132,7 @@ function renderVisitorSection() {
       const s = document.createElement('script');
       s.type = 'text/javascript';
       s.id   = 'clustrmaps';
-      s.src  = `//clustrmaps.com/map_v2.js?d=${CONFIG.clustrmaps}&cl=ef4444&w=a`;
+      s.src  = `//clustrmaps.com/map_v2.js?d=${CONFIG.clustrmaps}&cl=ffffff&w=a`;
       mapEl.innerHTML = '';
       mapEl.appendChild(s);
     } else {
@@ -245,17 +245,17 @@ async function renderPDFThumb(url, container) {
     const pdf  = await pdfjsLib.getDocument(url).promise;
     const page = await pdf.getPage(1);
     const vp0  = page.getViewport({ scale: 1 });
-    const scale = Math.min(
-      container.clientWidth  / vp0.width,
-      container.clientHeight / vp0.height
-    ) || 1;
+    // Fill container width at full resolution, then crop top portion
+    const scale = (container.clientWidth || 200) / vp0.width;
     const vp = page.getViewport({ scale });
 
     const canvas = document.createElement('canvas');
     canvas.width  = vp.width;
-    canvas.height = vp.height;
+    canvas.height = vp.height;   // full page, container clips the bottom
 
     await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+    container.style.alignItems   = 'flex-start';  // pin canvas to top
+    container.style.overflow     = 'hidden';
     container.innerHTML = '';
     container.appendChild(canvas);
   } catch {
