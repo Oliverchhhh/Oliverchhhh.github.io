@@ -199,7 +199,7 @@ function renderPubs(list) {
 
     const thumbContent = p.thumbnail
       ? p.thumbnail.toLowerCase().endsWith('.pdf')
-        ? `<div class="pdf-preview-placeholder" data-pdf="${p.thumbnail}"></div>`
+        ? `<span class="pdf-pending" data-pdf="${p.thumbnail}"></span>`
         : `<img src="${p.thumbnail}" alt="${p.title}" loading="lazy">`
       : `<span class="pdf-pending" data-pdf="${p.links?.paper || p.links?.arxiv || ''}">📄</span>`;
 
