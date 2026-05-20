@@ -181,9 +181,13 @@ function renderPubs(list) {
   if (!el) return;
 
   el.innerHTML = list.map((p, i) => {
-    const authors = p.authors.map(a =>
-      a === p.me ? `<span class="me">${a}</span>` : a
-    ).join(', ');
+    const eq = p.equal || [];
+    const authors = p.authors.map(a => {
+      const sup  = eq.includes(a) ? '<sup>†</sup>' : '';
+      const name = a === p.me ? `<span class="me">${a}</span>` : a;
+      return name + sup;
+    }).join(', ');
+    const equalNote = eq.length ? `<p class="pub-equal">† Equal contribution</p>` : '';
 
     const links = Object.entries(p.links || {})
       .filter(([, v]) => v)
@@ -203,6 +207,7 @@ function renderPubs(list) {
         <div class="pub-info">
           <h3 class="pub-title">${p.title}</h3>
           <p class="pub-authors">${authors}</p>
+          ${equalNote}
           <p class="pub-venue">${p.venue} &middot; ${p.year}</p>
           <div class="pub-links">${links}</div>
           ${tags ? `<div class="pub-tags">${tags}</div>` : ''}
