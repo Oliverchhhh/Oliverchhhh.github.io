@@ -277,14 +277,14 @@ function buildBlog() {
   const el = document.getElementById('blogGrid');
   if (!el) return;
 
-  el.innerHTML = BLOG.map(post => {
+  el.innerHTML = BLOG.map((post, i) => {
     const thumb = post.image
       ? `<img class="blog-thumb-img" src="${post.image}" alt="${post.title}" loading="lazy">`
-      : `<div class="blog-thumb-placeholder" style="background:${titleGradient(post.title)}">${post.title[0].toUpperCase()}</div>`;
+      : `<div class="blog-thumb-placeholder" id="bthumb-${i}" style="background:${titleGradient(post.title)}">${post.title[0].toUpperCase()}</div>`;
 
     const meta = [post.date, ...(post.tags || [])].join(' · ');
-
     const isInternal = post.url && !post.url.startsWith('http');
+
     return `
       <a class="blog-card" href="${post.url}"${isInternal ? '' : ' target="_blank" rel="noopener"'}>
         ${thumb}
@@ -295,6 +295,23 @@ function buildBlog() {
         </div>
       </a>`;
   }).join('');
+
+  // For internal posts without a manual image, auto-extract first image from markdown
+  BLOG.forEach((post, i) => {
+    if (post.image) return;
+    const match = post.url && post.url.match(/[?&]post=([^&]+)/);
+    if (!match) return;
+    fetch(`files/blogs/${match[1]}`)
+      .then(r => r.ok ? r.text() : null)
+      .then(text => {
+        if (!text) return;
+        const imgMatch = text.match(/!\[.*?\]\(([^)]+)\)/);
+        if (!imgMatch) return;
+        const el = document.getElementById(`bthumb-${i}`);
+        if (el) el.outerHTML = `<img class="blog-thumb-img" src="${imgMatch[1]}" alt="" loading="lazy">`;
+      })
+      .catch(() => {});
+  });
 }
 
 // ── Blog post (Markdown renderer) ──────────────────────────────────────────
