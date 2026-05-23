@@ -20,7 +20,7 @@ const BLOG = [
     title:   "我发布了浙江大学研究生支教团（新疆阿克苏分团）网站",
     date:    "2026-05-23",
     url:     "blog-post.html?post=new-web-publish.md",
-    image:   "assets/img/blog/web.png",
+    image:   "assets/img/web.png",
     tags:    ["News"],
     summary: "前几天花了些时间，给我们团做了一个网站,简单记录一下网站的设计",
   },
