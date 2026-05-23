@@ -5,7 +5,7 @@
 const NEWS = [
   {
     date: "2026-05",
-    text: "我发布了浙江大学研究生支教团（新疆阿克苏分团）网站，详细信息见(Blog)[https://oliverchhhh.github.io/blog-post.html?post=new-web-publish.md]",
+    text: "我发布了浙江大学研究生支教团（新疆阿克苏分团）网站，详细信息见 [Blog](https://oliverchhhh.github.io/blog-post.html?post=new-web-publish.md)",
   },
   {
     date: "2026-05",
