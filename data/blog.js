@@ -16,14 +16,14 @@ const BLOG = [
     tags:    ["Research", "Tips"],
     summary: "It introduces how to use my template to create your own personal website.",
   },
-  // {
-  //   title:   "Understanding Diffusion Models from Scratch",
-  //   date:    "2024-11-20",
-  //   url:     "https://your-blog.com/post-2",
-  //   image:   "assets/img/blog/diffusion.png",
-  //   tags:    ["Tutorial", "Deep Learning"],
-  //   summary: "A step-by-step walkthrough of the mathematics behind denoising diffusion probabilistic models, with code examples in PyTorch.",
-  // },
+  {
+    title:   "我发布了浙江大学研究生支教团（新疆阿克苏分团）网站",
+    date:    "2026-05-23",
+    url:     "blog-post.html?post=new-web-publish.md",
+    image:   "assets/img/blog/web.png",
+    tags:    ["News"],
+    summary: "前几天花了些时间，给我们团做了一个网站,简单记录一下网站的设计",
+  },
   // {
   //   title:   "Reading List: Papers That Changed How I Think",
   //   date:    "2024-07-05",
