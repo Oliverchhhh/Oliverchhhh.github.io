@@ -38,7 +38,7 @@ const PUBLICATIONS = [
     thumbnail: "assets/img/corl2026.png",
     links: {
       arxiv:   "",
-      code:    "https://horizon-website.github.io/HORIZON/",
+      code:    "https://horizon-2026.netlify.app/",
       video:   "",
     },
     tags: ["Domain Randomization", " Locomotion","Embodied AI"],
