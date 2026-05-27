@@ -35,7 +35,7 @@ const PUBLICATIONS = [
     me:      "Hui Chen",
     venue:   "Under Review",
     year:    2026,
-    thumbnail: "assets/img/corl2026.png",
+    thumbnail: "assets/img/四足高跷-1080p.mp4",
     links: {
       arxiv:   "",
       code:    "https://horizon-website.github.io/HORIZON/",
