@@ -39,7 +39,7 @@ const PUBLICATIONS = [
     links: {
       arxiv:   "",
       code:    "https://horizon-website.github.io/HORIZON/",
-      video:   "/home/ch/homepage/assets/img/四足高跷-1080p.mp4",
+      video:   "assets/img/四足高跷-1080p.mp4",
     },
     tags: ["Domain Randomization", " Locomotion"],
   },
