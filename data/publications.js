@@ -39,9 +39,9 @@ const PUBLICATIONS = [
     links: {
       arxiv:   "",
       code:    "https://horizon-website.github.io/HORIZON/",
-      video:   "assets/img/四足高跷-1080p.mp4",
+      video:   "",
     },
-    tags: ["Domain Randomization", " Locomotion"],
+    tags: ["Domain Randomization", " Locomotion","Embodied AI"],
   },
   // {
   //   title:   "Workshop or Preprint Paper Title",
