@@ -250,7 +250,7 @@ img { display: block; max-width: 100%; }
   display: flex; align-items: center; justify-content: center;
   color: var(--light); font-size: 28px;
 }
-.pub-thumb img, .pub-thumb canvas { width: 100%; height: 100%; object-fit: cover; }
+.pub-thumb img, .pub-thumb canvas, .pub-thumb video { width: 100%; height: 100%; object-fit: cover; }
 
 .pub-info { flex: 1; min-width: 0; }
 

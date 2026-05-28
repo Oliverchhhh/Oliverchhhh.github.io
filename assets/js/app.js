@@ -153,7 +153,7 @@ function buildPublications() {
   document.title = `Publications — ${CONFIG.name}`;
   buildFooter();
 
-  const sorted = [...PUBLICATIONS].sort((a, b) => b.year - a.year);
+  const sorted = PUBLICATIONS;
   const tags   = [...new Set(sorted.flatMap(p => p.tags || []))];
 
   const filtersEl = document.getElementById('pubFilters');
@@ -174,7 +174,7 @@ function filterPubs(tag, btn) {
   const list = tag === 'all'
     ? PUBLICATIONS
     : PUBLICATIONS.filter(p => (p.tags || []).includes(tag));
-  renderPubs([...list].sort((a, b) => b.year - a.year));
+  renderPubs(list);
 }
 
 function renderPubs(list) {
@@ -198,20 +198,27 @@ function renderPubs(list) {
 
     const tags = (p.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
 
+    const thumbExt = (p.thumbnail || '').toLowerCase().split('.').pop();
     const thumbContent = p.thumbnail
-      ? p.thumbnail.toLowerCase().endsWith('.pdf')
-        ? `<span class="pdf-pending" data-pdf="${p.thumbnail}"></span>`
-        : `<img src="${p.thumbnail}" alt="${p.title}" loading="lazy">`
+      ? ['mp4', 'webm', 'ogg'].includes(thumbExt)
+        ? `<video src="${p.thumbnail}" autoplay loop muted playsinline></video>`
+        : thumbExt === 'pdf'
+          ? `<span class="pdf-pending" data-pdf="${p.thumbnail}"></span>`
+          : `<img src="${p.thumbnail}" alt="${p.title}" loading="lazy">`
       : `<span class="pdf-pending" data-pdf="${p.links?.paper || p.links?.arxiv || ''}">📄</span>`;
 
     return `
       <div class="pub-card">
         <div class="pub-thumb" id="thumb-${i}">${thumbContent}</div>
         <div class="pub-info">
-          <h3 class="pub-title">${p.title}</h3>
+          <h3 class="pub-title">${
+            p.links?.website
+              ? `<a href="${p.links.website}" target="_blank" rel="noopener">${p.title}</a>`
+              : p.title
+          }</h3>
           <p class="pub-authors">${authors}</p>
           ${equalNote}
-          <p class="pub-venue">${p.venue} &middot; ${p.year}</p>
+          <p class="pub-venue">${marked.parseInline(p.venue || '')}</p>
           <div class="pub-links">${links}</div>
           ${tags ? `<div class="pub-tags">${tags}</div>` : ''}
         </div>
