@@ -78,8 +78,7 @@ function buildHome() {
   renderProfile();
   renderAboutMe();
   renderNews();
-  const vc = document.getElementById('visitorCounter');
-  if (vc) vc.innerHTML = `<span id="busuanzi_value_site_uv">–</span> unique visitors · <span id="busuanzi_value_site_pv">–</span> total views · updated ${CONFIG.lastUpdated}`;
+  renderVisitorSection();
   buildFooter();
 }
 
@@ -123,6 +122,29 @@ function renderNews() {
       <span>${mdInline(n.text)}</span>
     </li>`
   ).join('');
+}
+
+function renderVisitorSection() {
+  const mapEl = document.getElementById('visitorMap');
+  const luEl  = document.getElementById('lastUpdated');
+
+  if (mapEl) {
+    if (CONFIG.clustrmaps) {
+      const s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.id   = 'clustrmaps';
+      s.src  = `//clustrmaps.com/map_v2.js?d=${CONFIG.clustrmaps}&cl=ffffff&w=a`;
+      mapEl.innerHTML = '';
+      mapEl.appendChild(s);
+    } else {
+      mapEl.innerHTML = `<p class="map-hint">
+        Set <code>clustrmaps</code> in <code>data/config.js</code> to show visitor map
+        — see README for registration steps.
+      </p>`;
+    }
+  }
+
+  if (luEl) luEl.textContent = `updated ${CONFIG.lastUpdated}`;
 }
 
 // ── Publications ───────────────────────────────────────────────────────────

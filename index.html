@@ -11,7 +11,7 @@
 
 <header class="nav" id="mainNav"></header>
 
-<main class="container page-content home-content">
+<main class="container page-content">
   <div class="home-grid">
 
     <!-- Left: sticky profile card -->
@@ -26,12 +26,18 @@
       <h2 class="section-title">News</h2>
       <ul id="newsList" class="news-list"></ul>
 
+      <!-- Visitor map — no heading, just map + one counter line -->
+      <div class="map-container" id="visitorMap"></div>
+      <p class="visitor-counter">
+        <span id="busuanzi_value_site_uv">–</span> unique visitors ·
+        <span id="busuanzi_value_site_pv">–</span> total views ·
+        <span id="lastUpdated"></span>
+      </p>
 
     </div>
   </div>
 </main>
 
-<div class="visitor-counter container" id="visitorCounter"></div>
 <footer class="site-footer container" id="siteFooter"></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
