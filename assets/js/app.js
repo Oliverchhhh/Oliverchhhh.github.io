@@ -78,9 +78,9 @@ function buildHome() {
   renderProfile();
   renderAboutMe();
   renderNews();
-  buildFooter(true);
-  const luEl = document.getElementById('lastUpdated');
-  if (luEl) luEl.textContent = `updated ${CONFIG.lastUpdated}`;
+  const vc = document.getElementById('visitorCounter');
+  if (vc) vc.innerHTML = `<span id="busuanzi_value_site_uv">–</span> unique visitors · <span id="busuanzi_value_site_pv">–</span> total views · updated ${CONFIG.lastUpdated}`;
+  buildFooter();
 }
 
 function renderProfile() {
@@ -348,14 +348,11 @@ function buildResume() {
 }
 
 // ── Footer ─────────────────────────────────────────────────────────────────
-function buildFooter(withCounter = false) {
+function buildFooter() {
   const el = document.getElementById('siteFooter');
   if (!el) return;
   const year = new Date().getFullYear();
-  const counter = withCounter
-    ? `<p class="visitor-counter"><span id="busuanzi_value_site_uv">–</span> unique visitors · <span id="busuanzi_value_site_pv">–</span> total views · <span id="lastUpdated"></span></p>`
-    : '';
-  el.innerHTML = `${counter}<p>&copy; ${year} ${CONFIG.name} &middot; All rights reserved</p>`;
+  el.innerHTML = `&copy; ${year} ${CONFIG.name} &middot; All rights reserved`;
 }
 
 // ── Init ───────────────────────────────────────────────────────────────────

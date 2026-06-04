@@ -5,7 +5,7 @@
 const NEWS = [
   {
     data: "2026-06",
-    text: "I have graduated and received the title of \"Outstanding Graduation Thesis\" from Zhejiang University as well as the title of \"Outstanding Graduate\" from Zhejiang University!"
+    text: "I have graduated and received the title of \"Outstanding Graduation Thesis\" from Zhejiang University as well as the title of \"Outstanding Graduate\" from Zhejiang University!",
   },
   {
     date: "2026-05",

@@ -178,7 +178,9 @@ img { display: block; max-width: 100%; }
 .about-me p + p { margin-top: 10px; }
 
 .visitor-counter {
-  margin: 0 0 5px; font-style: italic;
+  text-align: center; font-size: 11.5px;
+  color: var(--light); font-style: italic;
+  margin-top: 40px; margin-bottom: 0;
 }
 
 /* ── Page header ────────────────────────────────────────────────────────── */
@@ -393,7 +395,7 @@ body.embed-mode .page-content { padding-top: 20px; }
   text-align: center;
   font-size: 11.5px;
   color: var(--light);
-  margin-top: 40px;
+  margin-top: 12px;
 }
 
 /* ── Responsive ─────────────────────────────────────────────────────────── */
