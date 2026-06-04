@@ -4,6 +4,10 @@
 
 const NEWS = [
   {
+    data: "2026-06",
+    text: "I have graduated and received the title of \"Outstanding Graduation Thesis\" from Zhejiang University as well as the title of \"Outstanding Graduate\" from Zhejiang University!"
+  },
+  {
     date: "2026-05",
     text: "我发布了浙江大学研究生支教团（新疆阿克苏分团）网站，详细信息见 [Blog](https://oliverchhhh.github.io/blog-post.html?post=new-web-publish.md)",
   },
