@@ -6,11 +6,18 @@ A clean, fast personal academic homepage built with pure HTML / CSS / JavaScript
 
 ---
 
+## 🆕 What's New
+
+- **2026-06** — Added a **Friends** page: avatar cards, optional category grouping, and a copy-ready "exchange links" block.
+
+---
+
 ## Features
 
 - **Home** — Profile, bio, news feed, geographic visitor map (Clustrmaps)
 - **Publications** — Paper cards with author highlighting, equal-contribution notation, PDF first-page auto-preview
 - **Blog** — Markdown-based posts with live page preview thumbnails
+- **Friends** — Friend-links page with avatar cards, optional category grouping, and a copy-ready "exchange links" block
 - **CV** — One-click PDF viewer
 - Dark / light mode, fully responsive
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friends</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="nav" id="mainNav"></header>
+
+<main class="container page-content">
+  <div class="page-header">
+    <h1>Friends</h1>
+    <p>Links to friends and people whose work I admire.</p>
+  </div>
+
+  <div id="friendsList"></div>
+
+  <div id="friendsApply" class="friends-apply"></div>
+</main>
+
+<footer class="site-footer container" id="siteFooter"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="data/config.js"></script>
+<script src="data/friends.js"></script>
+<script src="assets/js/app.js"></script>
+<script>buildFriends()</script>
+</body>
+</html>

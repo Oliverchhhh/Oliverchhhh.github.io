@@ -5,6 +5,10 @@
 const NEWS = [
   {
     date: "2026-06",
+    text: "Added a <a href=\"https://oliverchhhh.github.io/friends.html\">Friends</a> page to the site — feel free to exchange links!",
+  },
+  {
+    date: "2026-06",
     text: "I have graduated and received the title of \"Outstanding Graduation Thesis\" from Zhejiang University as well as the title of \"Outstanding Graduate\" from Zhejiang University!",
   },
   {

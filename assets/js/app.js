@@ -33,6 +33,7 @@ const PAGES = [
   { href: 'index.html',        label: 'Home' },
   { href: 'publications.html', label: 'Publications' },
   { href: 'blog.html',         label: 'Blog' },
+  { href: 'friends.html',      label: 'Friends' },
   { href: CONFIG.resumePDF || 'files/resume.pdf', label: 'CV', blank: true },
 ];
 
@@ -355,6 +356,76 @@ function parseFrontmatter(text) {
     if (i > 0) meta[line.slice(0, i).trim()] = line.slice(i + 1).trim();
   });
   return { meta, content: text.slice(end + 4).trim() };
+}
+
+// ── Friends (友链) ──────────────────────────────────────────────────────────
+function buildFriends() {
+  buildNav('friends.html');
+  document.title = `Friends — ${CONFIG.name}`;
+  buildFooter();
+
+  const listEl = document.getElementById('friendsList');
+  if (listEl) {
+    if (!FRIENDS.length) {
+      listEl.innerHTML = `<p class="friends-empty">No friend links yet.</p>`;
+    } else {
+      // Group by tag only if at least one friend declares tags
+      const grouped = FRIENDS.some(f => (f.tags || []).length);
+      if (grouped) {
+        const groups = {};
+        FRIENDS.forEach(f => {
+          (f.tags && f.tags.length ? f.tags : ['Others']).forEach(t => {
+            (groups[t] = groups[t] || []).push(f);
+          });
+        });
+        listEl.innerHTML = Object.entries(groups).map(([tag, items]) =>
+          `<h2 class="friends-group-title">${tag}</h2>
+           <div class="friends-grid">${items.map(friendCard).join('')}</div>`
+        ).join('');
+      } else {
+        listEl.innerHTML = `<div class="friends-grid">${FRIENDS.map(friendCard).join('')}</div>`;
+      }
+    }
+  }
+
+  renderFriendsApply();
+}
+
+function friendCard(f) {
+  const avatar = f.avatar
+    ? `<img class="friend-avatar" src="${f.avatar}" alt="${f.name}" loading="lazy"
+         onerror="this.outerHTML='<span class=&quot;friend-avatar friend-avatar-fallback&quot; style=&quot;background:${titleGradient(f.name)}&quot;>${(f.name[0] || '?').toUpperCase()}</span>'">`
+    : `<span class="friend-avatar friend-avatar-fallback" style="background:${titleGradient(f.name)}">${(f.name[0] || '?').toUpperCase()}</span>`;
+
+  return `
+    <a class="friend-card" href="${f.url}" target="_blank" rel="noopener">
+      ${avatar}
+      <div class="friend-info">
+        <span class="friend-name">${f.name}</span>
+        ${f.bio ? `<span class="friend-bio">${mdInline(f.bio)}</span>` : ''}
+      </div>
+    </a>`;
+}
+
+// "Apply for a friend link" block — shows your own card info to copy
+function renderFriendsApply() {
+  const el = document.getElementById('friendsApply');
+  if (!el) return;
+  const url = CONFIG.social.homepage || CONFIG.social.github || '';
+  const snippet =
+`{
+  name:   "${CONFIG.name}",
+  url:    "${url}",
+  avatar: "${CONFIG.avatar}",
+  bio:    "${(CONFIG.title || '').replace(/"/g, '\\"')}",
+}`;
+  el.innerHTML = `
+    <h2 class="friends-group-title">Exchange Links</h2>
+    <p class="friends-apply-text">
+      Want to exchange links? Add my info below and let me know — I'll add yours back.
+    </p>
+    <pre class="friends-apply-code"><code>${snippet
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`;
 }
 
 // ── Resume ─────────────────────────────────────────────────────────────────
