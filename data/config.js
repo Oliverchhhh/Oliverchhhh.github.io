@@ -28,9 +28,9 @@ const CONFIG = {
     homepage: "https://oliverchhhh.github.io",   // any other personal URL
   },
 
-  // Visitor map — sign up at https://clustrmaps.com
-  // Steps: Register → My Maps → Add New Map (enter your GitHub Pages URL)
+  // Visitor map — sign up at https://mapmyvisitors.com (formerly ClustrMaps)
+  // Steps: Register / log in → My Maps → Add New Map (enter your GitHub Pages URL)
   //        → copy the ID from the embed code (the value after "d=")
   // Example: if embed is "...?d=abc123XYZ" → set clustrmaps: "abc123XYZ"
-  clustrmaps: "QZz4zaiLEt8tI8355kdSfV3qTJdiZFm-ARW8dKQ-Veg",
+  clustrmaps: "dlnDPjQzOI6sZehD8695xkUxELfm6JLAL3BeaLUDTzs",
 };

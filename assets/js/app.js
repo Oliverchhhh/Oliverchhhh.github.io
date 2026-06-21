@@ -133,8 +133,8 @@ function renderVisitorSection() {
     if (CONFIG.clustrmaps) {
       const s = document.createElement('script');
       s.type = 'text/javascript';
-      s.id   = 'clustrmaps';
-      s.src  = `//clustrmaps.com/map_v2.js?d=${CONFIG.clustrmaps}&cl=ffffff&w=a`;
+      s.id   = 'mapmyvisitors';
+      s.src  = `//mapmyvisitors.com/map.js?d=${CONFIG.clustrmaps}&cl=ffffff&w=a`;
       mapEl.innerHTML = '';
       mapEl.appendChild(s);
     } else {
