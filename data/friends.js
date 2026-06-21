@@ -10,8 +10,8 @@ const FRIENDS = [
   {
     name:   "jwgg",
     url:    "https://muzibing.github.io/",
-    avatar: "",
-    bio:    "ZJU undergrad, now at Meituan, Beijing",
+    avatar: "assets/img/qhqq.jpg",
+    bio:    "🎓 B.Eng. in CS from ZJU | 🛠️ Front-end Developer at Meituan now",
     tags:   ["Engineers"],
   },
   // {
