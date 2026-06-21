@@ -8,7 +8,7 @@ A clean, fast personal academic homepage built with pure HTML / CSS / JavaScript
 
 ## 🆕 What's New
 
-- **2026-06** — Migrated the visitor map from ClustrMaps to **[MapMyVisitors](https://mapmyvisitors.com)**. ClustrMaps' old domain stopped working, and the account/map could no longer be recovered, so the map now starts fresh — unfortunately the previously accumulated visitor data could not be carried over. 😢
+- **2026-06** — Migrated the visitor map from ClustrMaps to **[MapMyVisitors](https://mapmyvisitors.com)**. ClustrMaps' old domain stopped working, and the account/map could no longer be recovered, so the map now starts fresh — unfortunately the previously accumulated visitor data could not be carried over. 😢 More context: [this Reddit thread](https://www.reddit.com/r/website/comments/1twil4j/clustrmapscom_seems_to_be_completely_dead_down/).
 - **2026-06** — Added a **Friends** page: avatar cards, optional category grouping, and a copy-ready "exchange links" block.
 
 ---
