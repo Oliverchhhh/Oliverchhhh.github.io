@@ -5,6 +5,10 @@
 const NEWS = [
   {
     date: "2026-06",
+    text: "Migrated the visitor map to MapMyVisitors (the old ClustrMaps domain died); sadly the previous visitor data was lost — details in the [README](https://github.com/Oliverchhhh/Oliverchhhh.github.io#-whats-new).",
+  },
+  {
+    date: "2026-06",
     text: "Added a <a href=\"https://oliverchhhh.github.io/friends.html\">Friends</a> page to the site — feel free to exchange links!",
   },
   {
