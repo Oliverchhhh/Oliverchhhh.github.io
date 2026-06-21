@@ -25,7 +25,7 @@ const CONFIG = {
     twitter:  "",
     linkedin: "",
     orcid:    "",
-    homepage: "",   // any other personal URL
+    homepage: "https://oliverchhhh.github.io",   // any other personal URL
   },
 
   // Visitor map — sign up at https://clustrmaps.com

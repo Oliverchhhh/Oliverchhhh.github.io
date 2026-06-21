@@ -443,7 +443,11 @@ body.embed-mode .page-content { padding-top: 20px; }
 .friends-empty { color: var(--light); font-style: italic; }
 
 .friends-apply { margin-top: 24px; }
-.friends-apply-text { font-size: 13.5px; color: var(--muted); margin-bottom: 12px; }
+.friends-apply-text { font-size: 13.5px; color: var(--muted); margin-bottom: 12px; line-height: 1.6; }
+.friends-apply-text code {
+  background: var(--bg-alt); padding: 1px 5px; border-radius: 3px;
+  font-size: 12px; font-family: 'SFMono-Regular', Consolas, monospace;
+}
 .friends-apply-code {
   background: var(--bg-alt); border: 1px solid var(--border);
   border-radius: var(--radius-sm); padding: 14px 16px;

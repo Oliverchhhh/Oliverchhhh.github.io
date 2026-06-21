@@ -422,7 +422,8 @@ function renderFriendsApply() {
   el.innerHTML = `
     <h2 class="friends-group-title">Exchange Links</h2>
     <p class="friends-apply-text">
-      Want to exchange links? Add my info below and let me know — I'll add yours back.
+      Want to exchange links? Add my info below (feel free to tweak the <code>name</code> or
+      <code>bio</code> however you like) and let me know — I'll add yours back.
     </p>
     <pre class="friends-apply-code"><code>${snippet
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`;
