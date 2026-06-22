@@ -8,17 +8,24 @@
 
 const FRIENDS = [
   {
-    name:   "jwgg",
+    name:   "Jiawei Cai",
     url:    "https://muzibing.github.io/",
     avatar: "assets/img/qhqq.jpg",
     bio:    "🎓 B.Eng. in CS from ZJU | 🛠️ Front-end Developer at Meituan now",
     tags:   ["Engineers"],
   },
-  // {
-  //   name:   "李四",
-  //   url:    "https://lisi.com",
-  //   avatar: "https://lisi.com/avatar.jpg",
-  //   bio:    "同门好友，研究 3D vision。",
-  //   tags:   ["Classmates"],
-  // },
+  {
+    name:   "Sibo Xiao",
+    url:    "https://seabirdshore.github.io/CyberHome/",
+    avatar: "assets/img/Sibo_Xiao.jpg",
+    bio:    "🎓 B.Eng. in CS from ZJU | 🚀 Incoming Ph.D. at NUS, working on LLM acceleration",
+    tags:   ["Researchers"],
+  },
+  {
+    name:   "Yuruo Wu",
+    url:    "https://tsuki0512.github.io/ ",
+    avatar: "assets/img/Yuruo_Wu.jpg",
+    bio:    "🎓 B.Eng. in CS from ZJU | 🎬 Incoming M.S. at ZJU, working on audio-video",
+    tags:   ["Researchers"],
+  },
 ];
