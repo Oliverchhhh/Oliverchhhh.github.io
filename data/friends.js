@@ -35,4 +35,11 @@ const FRIENDS = [
     bio:    "🎓 B.Eng. in CS from ZJU | ⚙️ Incoming M.S. at ZJU, working on ML systems",
     tags:   ["Researchers"],
   },
+  {
+    name:   "研究生支教团（新疆阿克苏分团）",
+    url:    "https://zjuvtc.netlify.app/",
+    avatar: "assets/img/logo.jpg",
+    bio:    "🏫 浙江大学研究生支教团（新疆阿克苏分团）",
+    tags:   ["Organization"],
+  },
 ];
