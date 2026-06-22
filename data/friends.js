@@ -42,4 +42,11 @@ const FRIENDS = [
     bio:    "🏫 浙江大学研究生支教团（新疆阿克苏分团）",
     tags:   ["Organization"],
   },
+  {
+    name:   "Xinyue Wu",
+    url:    "https://noresponse525.github.io",
+    avatar: "assets/img/Xinyue_Wu.jpg",
+    bio:    "🎓 B.Eng. in CS from ZJU | 💻 Software Engineer at Huawei",
+    tags:   ["Engineers"],
+  },
 ];
