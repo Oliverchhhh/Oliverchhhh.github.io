@@ -25,7 +25,14 @@ const FRIENDS = [
     name:   "Yuruo Wu",
     url:    "https://tsuki0512.github.io/ ",
     avatar: "assets/img/Yuruo_Wu.jpg",
-    bio:    "🎓 B.Eng. in CS from ZJU | 🎬 Incoming M.S. at ZJU, working on audio-video",
+    bio:    "🎓 B.Eng. in CS from ZJU | 🎬 Incoming M.S. at ZJU, working on multimodal model",
+    tags:   ["Researchers"],
+  },
+  {
+    name:   "Yuke Zhao",
+    url:    "https://hzeroyuke.github.io/my_blog/",
+    avatar: "assets/img/Yuke_Zhao.jpg",
+    bio:    "🎓 B.Eng. in CS from ZJU | ⚙️ Incoming M.S. at ZJU, working on ML systems",
     tags:   ["Researchers"],
   },
 ];
