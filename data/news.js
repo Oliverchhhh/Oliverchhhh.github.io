@@ -4,6 +4,10 @@
 
 const NEWS = [
   {
+    date: "2026-08",
+    text: "In the coming year, I will be conducting teaching assistance at a junior high school in Xinjiang Uyghur Autonomous Region. If you have a passion for public welfare and wish to contribute your efforts (by donating items, money, or participating in online or offline talks), please feel free to contact me.",
+  },
+  {
     date: "2026-06",
     text: "Migrated the visitor map to MapMyVisitors (the old ClustrMaps domain died); sadly the previous visitor data was lost — details in the [README](https://github.com/Oliverchhhh/Oliverchhhh.github.io#-whats-new).",
   },
